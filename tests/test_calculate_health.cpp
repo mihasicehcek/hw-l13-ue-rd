@@ -9,6 +9,10 @@ TEST(CalculateHealthTest, NoImpactWhenDistanceGreaterThan100) {
     EXPECT_FLOAT_EQ(calculate_health(100.0, 150.0, 50.0), 100.0);
 }
 
+TEST(CalculateHealthTest, NoImpactWhenDistanceEqual100) {
+    EXPECT_FLOAT_EQ(calculate_health(100.0, 100.0, 50.0), 100.0);
+}
+
 TEST(CalculateHealthTest, FullImpactWhenDistanceIsZero) {
     EXPECT_FLOAT_EQ(calculate_health(100.0, 0.0, -50.0), 50.0);
 }
